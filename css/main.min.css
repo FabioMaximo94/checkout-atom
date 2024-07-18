@@ -153,3 +153,77 @@ button.btn-lg.btn-block {
     font-size: 15px;
     color: #4a4a4a;
 }
+
+.cont--promo {
+    font-size: 40px;
+    right: 10%;
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 0px 40px black;
+    top: 48px;
+}
+
+.register__footer p {
+    text-align: center;
+    font-size: 12px;
+}
+
+.register__footer li {
+    color: #a7a7a7;
+    font-size: 15px;
+}
+
+.d-block.my-3 {
+    width: 90%;
+    display: flex !important;
+}
+
+.custom-control.custom-radio {
+    margin-left: 16px;
+}
+
+.row--cartao {
+    margin-left: 18px;
+    width: 90%;
+}
+
+.row--cartao input {
+    border-left: 2px solid #007bff !important;
+}
+
+.register__footer img {
+    width: 200px;
+    margin-left: 35%;
+    margin-bottom: 22px;
+}
+
+.register__footer p {
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+header#header>h4 {
+    text-align: end;
+    font-size: 14px;
+    color: white;
+    right: 10%;
+    position: absolute;
+    top: 30px;
+}
+
+.register__section--three i {
+    font-size: 100px;
+}
+
+.register__section--three {
+    text-align: center;
+    padding: 100px;
+    color: #28a745;
+}
+
+.register__section--three button {
+    background-color: transparent;
+    color: #0062cc;
+    border-color: #0062cc26;
+}

@@ -16,7 +16,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=1.20">
     <!--[if IE]>
       <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
       <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
@@ -29,7 +29,8 @@
 <body>
     <div class="loader"></div>
     <header id="header">
-        <div class="cont--promo">00:10:55</div>
+        <h4>Oferta por tempo limitado!</h4>
+        <div class="cont--promo" id="contador">60:00</div>
     </header>
 
     <main id="main" role="main">
@@ -106,7 +107,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="mail" placeholder="E-mail" required>
+                                        <input type="email" class="form-control" id="mail" placeholder="E-mail" required>
                                         <div class="invalid-feedback" style="width: 100%;">
                                             Seu e-mail por favor.
                                         </div>
@@ -118,7 +119,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="confirmmail" placeholder="Confirme seu e-mail" required>
+                                        <input type="email" class="form-control" id="confirmmail" placeholder="Confirme seu e-mail" required>
                                         <div class="invalid-feedback" style="width: 100%;">
                                             Confirme seu e-mail precisa ser o mesmo.
                                         </div>
@@ -156,7 +157,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="cep" placeholder="CEP" required>
+                                        <input type="number" class="form-control" id="cep" placeholder="CEP" required>
                                     </div>
                                 </div>
 
@@ -223,7 +224,7 @@
 
 
                                 <div class="col-md-12 mb-3">
-                                    <button class="btn btn-primary btn-lg btn-block" type="button">Continuar <i class="fa fa-arrow-right"></i></button>
+                                    <button class="btn btn-primary btn-lg btn-block send--payment" type="button">Continuar <i class="fa fa-arrow-right"></i></button>
                                 </div>
 
                             </div>
@@ -234,57 +235,55 @@
 
 
                             <div class="row register__section--two">
-                                <div class="col-md-12 mb-3"><h4>Insira suas informações de pagamento</h4></div>
+                                <div class="col-md-12 mb-3"><h2>Insira suas informações de pagamento</h2></div>
 
                                 <div class="d-block my-3">
                                     <div class="custom-control custom-radio">
                                         <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                                        <label class="custom-control-label" for="credit">Credit card</label>
+                                        <label class="custom-control-label" for="credit">Cartão de crédito</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                        <label class="custom-control-label" for="debit">Debit card</label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                        <label class="custom-control-label" for="paypal">Paypal</label>
+                                        <label class="custom-control-label" for="debit">Cartão de débito</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="cc-name">Name on card</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                                        <small class="text-muted">Full name as displayed on card</small>
-                                        <div class="invalid-feedback">
-                                            Name on card is required
+                                <div class="row--cartao">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cc-name">Name no cartão</label>
+                                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                            <small class="text-muted">Nome completo que aparece no cartão</small>
+                                            <div class="invalid-feedback">
+                                                Nome no cartão é obrigatório
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cc-number">Numero do cartão</label>
+                                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                            <div class="invalid-feedback">
+                                                Numero do cartão é obrigatório
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="cc-number">Credit card number</label>
-                                        <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                                        <div class="invalid-feedback">
-                                            Credit card number is required
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <label for="cc-expiration">Data de expiração</label>
+                                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                            <div class="invalid-feedback">
+                                                Data de expiração é obrigatório
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-3 mb-3">
-                                        <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                                        <div class="invalid-feedback">
-                                            Expiration date required
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <label for="cc-expiration">CVV</label>
-                                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                                        <div class="invalid-feedback">
-                                            Security code required
+                                        <div class="col-md-3 mb-3">
+                                            <label for="cc-expiration">CVV</label>
+                                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                            <div class="invalid-feedback">
+                                                Código de segurança é obrigatório
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <hr class="mb-4">
-                                <button class="btn btn-primary btn-lg btn-block" type="button">Efetuar pagamento</button>
+                                <button class="btn btn-primary btn-lg btn-block send-agradecimento" type="button">Efetuar pagamento</button>
 
                             </div>
 
@@ -309,11 +308,12 @@
                         </form>
 
 
-                        <div class="row register__section--three">
+                        <div class="row register__footer">
                                 
                             <div class="col-md-12">
                                 <p>Oferecido por: DIGITAL KINGDOM LTDA | Contato: <a href="malito:suporte@pablomarcal.com.br">suporte@pablomarcal.com.br</a></p>
-                                
+                                <img src="img/cartao.png">
+
                                 <ul>
                                     <li>Assim que o seu pagamento for realizado você receberá o acesso completo do produto em seu e-mail</li>
                                     <li>Pode acontecer do seu serviço de e-mail enviar por engano uma de nossas mensagens na caixa de spam. <b>Por isso pedimos que verifique também a sua caixa de spam;</b></li>
@@ -338,13 +338,15 @@
     <!-- Footer -->
     <footer id="footer">
         <p class="copyright">Todos os direitos reservados | Checkout ATOM SA.</p>
-        <img src="https://checkout4.xgrow.com/_next/image?url=https%3A%2F%2Flas.xgrow.com%2F03206210-00ef-464e-be79-9f9d635b234b.webp&w=384&q=75">
+        <img src="img/blin.png">
     </footer>
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="dist/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-mask-plugin@1.14.16/dist/jquery.mask.min.js"></script>
     <script src="dist/popper/popper.min.js" integrity=""></script>
     <script src="dist/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script src="js/script.js?v=1.22"></script>
 </body>
 
 </html>
