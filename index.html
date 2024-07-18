@@ -2,21 +2,20 @@
 <html lang="pt_BR">
 
 <head>
-    <title>Checkout - One Step Checkout</title>
+    <title>Lucrando com juros - Checkout</title>
     <!-- Required meta tags always come first -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="Checkout - One Step Checkout , Responsive Bootstrap 4 template , bootstrap 4 starter template, bootstrap4 template, checkout template">
+    <meta name="generator" content="Lucrando com juros - Checkout">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" lang="en" content="Checkout Bootstrap 4 pricing template , Responsive and Modern HTML5 Template made from bootstrap 4.">
-    <meta name="keywords" lang="en" content="pricing template, bootstrap 4 template,bootstrap 4 checkout template, responsive bootstrap 4 template, bootstrap 4, bootstraping, bootstrap4, oribitthemes">
+    <meta name="description" lang="en" content="Lucrando com juros - Checkout">
+    <meta name="keywords" lang="en" content="Lucrando com juros - Checkout">
     <meta name="robots" content="index, follow">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <meta name="description" content="">
     <!--Font Awesome-->
     <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=1.27">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=1.33">
     <!--[if IE]>
       <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
       <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
@@ -86,7 +85,11 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-globe"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="language" placeholder="Brasil" required>
+                                        <select class="form-control" id="language" name="language" required="">
+                                            <option value="Brasil">Brasil</option>
+                                            <option value="EUA">Estados Unidos</option>
+                                            <option value="Canada">Canadá</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -239,11 +242,11 @@
 
                                 <div class="d-block my-3">
                                     <div class="custom-control custom-radio">
-                                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" value="card" checked required>
                                         <label class="custom-control-label" for="credit">Cartão de crédito</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" value="debit" required>
                                         <label class="custom-control-label" for="debit">Cartão de débito</label>
                                     </div>
                                 </div>
@@ -346,7 +349,7 @@
     <script src="dist/popper/popper.min.js" integrity=""></script>
     <script src="dist/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/main.min.js"></script>
-    <script src="js/script.js?v=1.27"></script>
+    <script src="js/script.js?v=1.33"></script>
 </body>
 
 </html>

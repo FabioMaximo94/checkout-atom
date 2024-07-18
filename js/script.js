@@ -141,8 +141,8 @@ $("#cc-cvv").mask("999");
 
 });
 
-  let gateway_id = "TransactionID1233980";
-
+let gateway_id = "TransactionID1233980";
+let appid = "pk_test_OjV6NDMcPaszNJ3q";
 
 
 
@@ -152,7 +152,9 @@ function sendUser(gateway_id) {
   let username = $("#username").val();
   let mail = $("#mail").val();
   let telefone = $("#telefone").val();
+  telefone = telefone.replace(/[-.\s]/g, '');
   let cpfcnpj = $("#cpfcnpj").val();
+  cpfcnpj = cpfcnpj.replace(/[-.\s]/g, '');
   let cep = $("#cep").val();
   let endereco = $("#endereco").val();
   let complemento = $("#complemento").val();
@@ -205,8 +207,11 @@ function sendPay() {
 
   let paymentMethod = $('input[name="paymentMethod"]:checked').val();
   let ccnumber = $("#cc-number").val();
+  ccnumber = ccnumber.replace(/[-.\s]/g, '');
+
   let ccname = $("#cc-name").val();
   let cpfcnpj = $("#cpfcnpj").val();
+  cpfcnpj = cpfcnpj.replace(/[-.\s]/g, '');
   let cccvv = $("#cc-cvv").val();
 
   let inputValue = $("#cc-expiration").val();
@@ -222,7 +227,7 @@ function sendPay() {
     redirect: 'follow'
   };
   
-  fetch("https://api.pagar.me/core/v5/tokens?appid=pk_test_OjV6NDMcPaszNJ3q", requestOptions)
+  fetch("https://api.pagar.me/core/v5/tokens?appid="+appid, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
@@ -251,7 +256,7 @@ $(".send--payment").click(function(){
 $(".send--agradecimento").click(function(){
 
   sendUser();
-  sendPay(gateway_id);
+  sendPay();
 
   // Como não ta acessando a API vou proceguir por aqui, se não me baseava no response do fetch
   $("form.needs-validation>div").removeClass("act");

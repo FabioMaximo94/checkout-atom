@@ -248,3 +248,11 @@ header#header>h4 {
     top: 20px;
     position: sticky;
 }
+
+.adress--infos {
+    margin: 20px 2px;
+}
+
+select#language {
+    height: 52px;
+}
