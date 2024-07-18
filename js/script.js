@@ -153,6 +153,9 @@ var timer = setInterval(function() {
 }, 1000);
 
 $("#telefone").mask("(00) 0000-00009");
+$("#cc-number").mask("9999 9999 9999 9999");
+$("#cc-expiration").mask("99/99");
+$("#cc-cvv").mask("999");
 
 
 
